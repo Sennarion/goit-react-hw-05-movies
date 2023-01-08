@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
 import { Link, Outlet } from 'react-router-dom';
-function SharedLayout(props) {
+function SharedLayout() {
   return (
     <div>
       <header>
@@ -13,5 +12,5 @@ function SharedLayout(props) {
     </div>
   );
 }
-SharedLayout.propTypes = {};
+
 export default SharedLayout;

@@ -1,22 +1,21 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+
+import Movie from './Movie';
 function MoviesList({ movies }) {
   return (
     <ul>
-      {movies.map(movie => {
+      {movies.map(({ id, title, name, poster_path }) => {
+        const movieName = title || name;
         return (
-          <li key={movie.id}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-              alt={movie.title}
-            />
-            <h2>{movie.title}</h2>
-            <Link to={`/movies/${movie.id}`}>More info</Link>
-          </li>
+          <Movie key={id} id={id} title={movieName} poster={poster_path} />
         );
       })}
     </ul>
   );
 }
-MoviesList.propTypes = {};
+
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+};
+
 export default MoviesList;

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 function Movies(props) {
   return (
     <div>
@@ -7,5 +6,5 @@ function Movies(props) {
     </div>
   );
 }
-Movies.propTypes = {};
+
 export default Movies;

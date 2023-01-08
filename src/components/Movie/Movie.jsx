@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { ListItem, MovieInfo, LinkItem, Title } from './Movie.styled';
 
 function Movie({ id, title, poster }) {
   return (
-    <li>
+    <ListItem>
       <img src={`https://image.tmdb.org/t/p/w500/${poster}`} alt={title} />
-      <h2>{title}</h2>
-      <Link to={`/movies/${id}`}>More info</Link>
-    </li>
+      <MovieInfo>
+        <Title>{title}</Title>
+        <LinkItem to={`/movies/${id}`}>More info</LinkItem>
+      </MovieInfo>
+    </ListItem>
   );
 }
 

@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from 'services/api';
+import { ListItem } from './Reviews.styled';
 
-function Reviews(props) {
+function Reviews() {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
-    api.getMovieReviews(movieId).then(({ results }) => {
-      console.log(results);
-      setReviews(results);
-    });
+    api
+      .getMovieReviews(movieId)
+      .then(({ results }) => {
+        setReviews(results);
+      })
+      .catch(err => console.log(err));
   }, [movieId]);
 
   if (reviews.length === 0) {
@@ -20,10 +23,10 @@ function Reviews(props) {
   return (
     <ul>
       {reviews.map(review => (
-        <li key={review.id}>
+        <ListItem key={review.id}>
           <h4>{review.author}</h4>
           <p>{review.content}</p>
-        </li>
+        </ListItem>
       ))}
     </ul>
   );

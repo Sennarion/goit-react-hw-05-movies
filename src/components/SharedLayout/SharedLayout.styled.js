@@ -9,6 +9,7 @@ export const Header = styled.header`
 
 export const Nav = styled.nav`
   display: flex;
+  justify-content: center;
   gap: 20px;
 `;
 
@@ -20,6 +21,7 @@ export const NavItem = styled(NavLink)`
 
   &.active {
     background-color: black;
+    box-shadow: 0px 4px 10px 0px rgba(181, 181, 181, 1);
   }
 
   :hover:not(.active),

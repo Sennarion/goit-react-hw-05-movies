@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from 'services/api';
+import { List, ListItem } from './Cast.styled';
+
 function Cast() {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
-    api.getMovieCredits(movieId).then(({ cast }) => {
-      console.log(cast);
-      setCast(cast);
-    });
+    api
+      .getMovieCredits(movieId)
+      .then(({ cast }) => {
+        setCast(cast);
+      })
+      .catch(err => console.log(err));
   }, [movieId]);
 
   if (!cast) {
@@ -17,10 +21,10 @@ function Cast() {
   }
 
   return (
-    <ul>
+    <List>
       {cast.map(({ id, name, character, profile_path }) => {
         return (
-          <li key={id}>
+          <ListItem key={id}>
             <img
               src={
                 profile_path
@@ -31,10 +35,10 @@ function Cast() {
             />
             <h4>{name}</h4>
             <p>{character}</p>
-          </li>
+          </ListItem>
         );
       })}
-    </ul>
+    </List>
   );
 }
 

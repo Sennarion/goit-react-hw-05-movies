@@ -1,50 +1,48 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useSearchParams, Link, useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { api } from 'services/api';
+import MoviesList from 'components/MoviesList/MoviesList';
 import { Container } from 'components/Container/Container.styled';
 import { Form } from './Movies.styled';
 
 function Movies() {
   const [movies, setMovies] = useState([]);
+  const [query, setQuery] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const query = searchParams.get('query') ?? '';
-  const location = useLocation();
+  const searchQuery = searchParams.get('query') ?? '';
 
   useEffect(() => {
-    if (query === '') return;
+    if (searchQuery === '') return;
 
-    api.getMovieByName(query).then(({ results }) => {
-      console.log(results);
-      setMovies(results);
-    });
-  }, [query]);
+    setQuery(searchQuery);
+
+    api
+      .getMovieByName(searchQuery)
+      .then(({ results }) => {
+        setMovies(results);
+      })
+      .catch(err => console.log(err));
+  }, [searchQuery]);
 
   function onFormSubmit(e) {
     e.preventDefault();
-    const query = e.target.elements.query.value;
     setSearchParams(query !== '' ? { query } : {});
-    e.target.reset();
   }
 
   return (
     <Container>
       <Form onSubmit={onFormSubmit}>
-        <input name="query" type="text" />
+        <input
+          name="query"
+          type="text"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+        />
         <button type="submit">Search</button>
       </Form>
-      {movies.length > 0 && (
-        <ul>
-          {movies.map(movie => (
-            <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`} state={{ from: location }}>
-                {movie.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      {movies.length > 0 && <MoviesList movies={movies} />}
     </Container>
   );
 }

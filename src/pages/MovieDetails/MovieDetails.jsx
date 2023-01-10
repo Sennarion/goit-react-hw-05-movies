@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { api } from 'services/api';
 import {
@@ -59,7 +59,9 @@ function MovieDetails() {
           </Wrapper>
         </MovieInfo>
       </Wrapper>
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </Container>
   );
 }

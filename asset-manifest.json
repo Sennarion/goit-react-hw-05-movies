@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05-movies/static/css/main.c48f5fe8.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.69bd9a64.js",
-    "static/js/310.78ece639.chunk.js": "/goit-react-hw-05-movies/static/js/310.78ece639.chunk.js",
-    "static/js/33.79bb242a.chunk.js": "/goit-react-hw-05-movies/static/js/33.79bb242a.chunk.js",
-    "static/js/387.42f3f495.chunk.js": "/goit-react-hw-05-movies/static/js/387.42f3f495.chunk.js",
-    "static/js/779.d0dfb770.chunk.js": "/goit-react-hw-05-movies/static/js/779.d0dfb770.chunk.js",
-    "index.html": "/goit-react-hw-05-movies/index.html",
-    "main.c48f5fe8.css.map": "/goit-react-hw-05-movies/static/css/main.c48f5fe8.css.map",
-    "main.69bd9a64.js.map": "/goit-react-hw-05-movies/static/js/main.69bd9a64.js.map",
-    "310.78ece639.chunk.js.map": "/goit-react-hw-05-movies/static/js/310.78ece639.chunk.js.map",
-    "33.79bb242a.chunk.js.map": "/goit-react-hw-05-movies/static/js/33.79bb242a.chunk.js.map",
-    "387.42f3f495.chunk.js.map": "/goit-react-hw-05-movies/static/js/387.42f3f495.chunk.js.map",
-    "779.d0dfb770.chunk.js.map": "/goit-react-hw-05-movies/static/js/779.d0dfb770.chunk.js.map"
+    "main.css": "/hw-react-routing/static/css/main.c48f5fe8.css",
+    "main.js": "/hw-react-routing/static/js/main.43007cbb.js",
+    "static/js/310.78ece639.chunk.js": "/hw-react-routing/static/js/310.78ece639.chunk.js",
+    "static/js/33.79bb242a.chunk.js": "/hw-react-routing/static/js/33.79bb242a.chunk.js",
+    "static/js/387.42f3f495.chunk.js": "/hw-react-routing/static/js/387.42f3f495.chunk.js",
+    "static/js/779.d0dfb770.chunk.js": "/hw-react-routing/static/js/779.d0dfb770.chunk.js",
+    "index.html": "/hw-react-routing/index.html",
+    "main.c48f5fe8.css.map": "/hw-react-routing/static/css/main.c48f5fe8.css.map",
+    "main.43007cbb.js.map": "/hw-react-routing/static/js/main.43007cbb.js.map",
+    "310.78ece639.chunk.js.map": "/hw-react-routing/static/js/310.78ece639.chunk.js.map",
+    "33.79bb242a.chunk.js.map": "/hw-react-routing/static/js/33.79bb242a.chunk.js.map",
+    "387.42f3f495.chunk.js.map": "/hw-react-routing/static/js/387.42f3f495.chunk.js.map",
+    "779.d0dfb770.chunk.js.map": "/hw-react-routing/static/js/779.d0dfb770.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c48f5fe8.css",
-    "static/js/main.69bd9a64.js"
+    "static/js/main.43007cbb.js"
   ]
 }
